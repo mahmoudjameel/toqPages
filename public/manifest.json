@@ -1,0 +1,39 @@
+{
+  "short_name": "طوق",
+  "name": "طوق - شركة الفعاليات المميزة",
+  "description": "شركة سعودية متخصصة في تنظيم الفعاليات الكبرى والمعارض والملتقيات والإنتاج الفني والتقني بمعايير عالمية وجودة استثنائية",
+  "icons": [
+    {
+      "src": "images/logo.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "images/logo.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "images/logo.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#16265B",
+  "background_color": "#ffffff",
+  "orientation": "portrait",
+  "scope": "/",
+  "lang": "ar",
+  "dir": "rtl",
+  "categories": ["business", "events", "entertainment"],
+  "screenshots": [
+    {
+      "src": "screenshot1.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ]
+}
