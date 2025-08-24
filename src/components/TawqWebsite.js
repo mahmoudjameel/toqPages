@@ -18,56 +18,86 @@ const TawqWebsite = () => {
   const heroSlides = [
     {
       title: "نحن لا نُنظّم فعاليات، نصنع تجارب",
-      subtitle: "خبرات سعودية عالمية في تنظيم الفعاليات الكبرى والمعارض",
+              subtitle: "خبرات سعودية عالمية في تنظيم الفعاليات والمعارض والمؤتمرات والتسويق الرقمي",
       image: "bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900",
       accent: "from-yellow-400 to-pink-500"
     },
     {
       title: "من الفكرة إلى لحظة الانبهار",
-      subtitle: "نرافقكم في كل خطوة لتحقيق فعالية استثنائية",
+              subtitle: "نرافقكم في كل خطوة لتحقيق فعالية استثنائية ومشروع تسويقي ناجح",
       image: "bg-gradient-to-br from-rose-900 via-purple-900 to-indigo-900",
       accent: "from-emerald-400 to-cyan-500"
     },
     {
       title: "معايير عالمية، هوية سعودية",
-      subtitle: "الجودة والابتكار والدقة في كل تفصيل",
+              subtitle: "الجودة والابتكار والدقة في كل تفصيل من الفعاليات إلى التسويق الرقمي",
       image: "bg-gradient-to-br from-emerald-900 via-teal-900 to-blue-900",
       accent: "from-orange-400 to-rose-500"
     }
   ];
 
-  const services = [
-    {
-      title: "تنظيم الفعاليات الكبرى",
-      description: "فعاليات استثنائية بمعايير عالمية تحاكي الحواس وتجسد هوية عملائنا",
-      icon: <Sparkles size={28} />,
-      gradient: "from-purple-500 via-pink-500 to-rose-500",
-      bgGradient: "from-purple-50 to-pink-50",
-      hoverGradient: "from-purple-600 to-pink-600"
+    const services = [
+    { 
+      title: "تنظيم الفعاليات الكبرى", 
+      description: "فعاليات استثنائية بمعايير عالمية تحاكي الحواس وتجسد هوية عملائنا", 
+      icon: <Sparkles size={28} />, 
+      gradient: "from-purple-500 via-pink-500 to-rose-500", 
+      bgGradient: "from-purple-50 to-pink-50", 
+      hoverGradient: "from-purple-600 to-pink-600",
+      details: [
+        "تخطيط وإدارة شاملة للفعاليات",
+        "تصميم وتنفيذ إبداعي",
+        "خدمات لوجستية متكاملة",
+        "إدارة الحضور والضيوف",
+        "تقارير شاملة وتقييم النجاح"
+      ]
     },
-    {
-      title: "المعارض والملتقيات",
-      description: "تصميم وتنفيذ معارض تفاعلية تترك أثراً عميقاً في نفوس الزوار",
-      icon: <Globe size={28} />,
-      gradient: "from-blue-500 via-cyan-500 to-teal-500",
-      bgGradient: "from-blue-50 to-cyan-50",
-      hoverGradient: "from-blue-600 to-cyan-600"
+    { 
+      title: "تنظيم المعارض والمؤتمرات", 
+      description: "خدمة شاملة لتنظيم الفعاليات والمعارض والمؤتمرات من البداية إلى النهاية", 
+      icon: <Globe size={28} />, 
+      gradient: "from-blue-500 via-cyan-500 to-teal-500", 
+      bgGradient: "from-blue-50 to-cyan-50", 
+      hoverGradient: "from-blue-600 to-cyan-600",
+      details: [
+        "التخطيط والإدارة الشاملة",
+        "التصميم والتنفيذ الإبداعي",
+        "الخدمات اللوجستية المتقدمة",
+        "إدارة الحضور والمشاركين",
+        "التقارير والتقييم الشامل"
+      ]
     },
-    {
-      title: "الفعاليات المؤسسية",
-      description: "فعاليات مؤسسية حيّة تعزز صورة شركتكم وتحقق أهدافكم التسويقية",
-      icon: <Target size={28} />,
-      gradient: "from-emerald-500 via-teal-500 to-cyan-500",
-      bgGradient: "from-emerald-50 to-teal-50",
-      hoverGradient: "from-emerald-600 to-teal-600"
+    { 
+      title: "التسويق الرقمي", 
+      description: "حلول متكاملة للتسويق الرقمي تواكب السوق السعودي والخليجي", 
+      icon: <Target size={28} />, 
+      gradient: "from-emerald-500 via-teal-500 to-cyan-500", 
+      bgGradient: "from-emerald-50 to-teal-50", 
+      hoverGradient: "from-emerald-600 to-teal-600",
+      details: [
+        "إدارة حسابات التواصل الاجتماعي",
+        "استراتيجية وخطط تسويقية",
+        "إعلانات مدفوعة متقدمة",
+        "محتوى إبداعي ملهم",
+        "تعاون مع المؤثرين",
+        "SEO & SEM متخصص"
+      ]
     },
-    {
-      title: "الإنتاج الفني والتقني",
-      description: "حلول إنتاج متكاملة بأحدث التقنيات والمعدات العالمية",
-      icon: <Zap size={28} />,
-      gradient: "from-orange-500 via-amber-500 to-yellow-500",
-      bgGradient: "from-orange-50 to-amber-50",
-      hoverGradient: "from-orange-600 to-amber-600"
+    { 
+      title: "الإنتاج الفني", 
+      description: "خدمات إنتاج متكاملة لمختلف أشكال المحتوى المرئي والمسموع", 
+      icon: <Zap size={28} />, 
+      gradient: "from-orange-500 via-amber-500 to-yellow-500", 
+      bgGradient: "from-orange-50 to-amber-50", 
+      hoverGradient: "from-orange-600 to-amber-600",
+      details: [
+        "التصوير الإعلاني الاحترافي",
+        "الأفلام القصيرة والدعائية",
+        "المونتاج والإخراج البصري",
+        "التصوير الجوي (Drone)",
+        "التغطية الإعلامية الشاملة",
+        "إنتاج المحتوى الرقمي"
+      ]
     }
   ];
 
@@ -322,7 +352,7 @@ const TawqWebsite = () => {
                 <div className="p-8 bg-white rounded-3xl shadow-xl border border-gray-100 relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-purple-500/10 to-blue-500/10 rounded-bl-3xl"></div>
                   <p className="relative z-10">
-                    <strong className="text-2xl bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">شركة "طوق"</strong> هي شركة سعودية متخصصة في تنظيم الفعاليات الكبرى، المعارض، الملتقيات، والفعاليات المؤسسية الحيّة، إضافة إلى خدمات الإنتاج الفني والتقني بمستويات عالمية.
+                    <strong className="text-2xl bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">شركة "طوق"</strong> هي شركة سعودية متخصصة في تنظيم الفعاليات الكبرى، المعارض، المؤتمرات، التسويق الرقمي، والإنتاج الفني والتقني بمستويات عالمية.
                   </p>
                 </div>
                 
@@ -391,7 +421,7 @@ const TawqWebsite = () => {
             </h2>
             <div className="w-32 h-2 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-full mx-auto mb-8"></div>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              نقدم مجموعة شاملة من الخدمات المتخصصة في تنظيم الفعاليات والإنتاج الفني بمعايير عالمية وجودة استثنائية
+              نقدم مجموعة شاملة من الخدمات المتخصصة في تنظيم الفعاليات والمعارض والمؤتمرات، التسويق الرقمي، والإنتاج الفني بمعايير عالمية وجودة استثنائية
             </p>
           </div>
 
@@ -414,14 +444,26 @@ const TawqWebsite = () => {
                   <h3 className="text-2xl font-black text-gray-900 mb-6 group-hover:text-purple-700 transition-colors duration-300">
                     {service.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed mb-8 group-hover:text-gray-700 transition-colors duration-300">
+                  <p className="text-gray-600 leading-relaxed mb-6 group-hover:text-gray-700 transition-colors duration-300">
                     {service.description}
                   </p>
                   
+                  {/* Service Details */}
+                  <div className="mb-6">
+                    <ul className="space-y-2">
+                      {service.details.map((detail, detailIndex) => (
+                        <li key={detailIndex} className="flex items-start text-sm text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
+                          <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full mt-2 ml-3 flex-shrink-0"></div>
+                          <span>{detail}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  
                   {/* CTA */}
-                  <div className="flex items-center text-purple-600 font-bold opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                  <div className="flex items-center text-purple-600 font-bold opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-200">
                     <span>اعرف المزيد</span>
-                    <ArrowRight className="mr-2 group-hover:translate-x-1 transition-transform" size={18} />
+                    <ArrowLeft className="mr-2 group-hover:-translate-x-1 transition-transform" size={18} />
                   </div>
                 </div>
               </div>
@@ -436,7 +478,7 @@ const TawqWebsite = () => {
                 <div className="text-4xl mb-6">🌟</div>
                 <h3 className="text-3xl font-black text-black mb-6">اكتشف منصة طوق للكاستينج</h3>
                 <p className="text-xl text-black/80 mb-10 max-w-2xl mx-auto">
-                  منصة رقمية متخصصة في إدارة مواهب الكاستينج للممثلين والأطفال والشباب
+                  منصة رقمية متخصصة في إدارة مواهب الكاستينج للممثلين والأطفال والشباب، مكملة لخدماتنا في تنظيم الفعاليات والتسويق الرقمي
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a 
@@ -452,6 +494,171 @@ const TawqWebsite = () => {
                   <button className="px-10 py-5 bg-white/20 backdrop-blur-sm text-black font-bold text-lg rounded-2xl border border-black/30 hover:bg-white/30 transition-all duration-300 flex items-center justify-center space-x-reverse space-x-3">
                     <Play size={20} />
                     <span>تعرف على المزيد</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Works Section */}
+      <section id="works" className="py-32 bg-gradient-to-br from-gray-900 via-purple-900/20 to-blue-900/20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-purple-900/20 to-blue-900/20">
+          <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/20"></div>
+        </div>
+        
+        {/* Animated Background */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-20 w-80 h-80 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-gradient-to-r from-emerald-500/10 to-teal-500/10 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-white">
+          <div className="text-center mb-24">
+            <div className="inline-block px-6 py-3 rounded-full bg-white/10 backdrop-blur-sm text-white font-bold text-sm mb-8 border border-white/20">
+              🎬 أعمالنا المميزة
+            </div>
+            <h2 className="text-5xl md:text-6xl font-black mb-8">
+              <span className="bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500 bg-clip-text text-transparent">
+                أعمالنا
+              </span>
+            </h2>
+            <div className="w-32 h-2 bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500 rounded-full mx-auto mb-8"></div>
+            <p className="text-xl text-gray-200 max-w-4xl mx-auto">
+              شاهد مجموعة من أفضل أعمالنا في تنظيم الفعاليات والمعارض والملتقيات
+            </p>
+          </div>
+
+          {/* Videos Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+            {[
+              {
+                title: "فعالية وزارة التجارة السنوية",
+                description: "معرض تجاري ضخم بمعايير عالمية",
+                thumbnail: "🏛️",
+                videoId: "dQw4w9WgXcQ",
+                category: "فعاليات حكومية"
+              },
+              {
+                title: "ملتقى أرامكو للطاقة",
+                description: "فعالية تقنية متطورة مع أحدث التقنيات",
+                thumbnail: "🛢️",
+                videoId: "9bZkp7q19f0",
+                category: "فعاليات تقنية"
+              },
+              {
+                title: "معرض سابك للصناعات",
+                description: "معرض صناعي تفاعلي بمساحة 5000 متر",
+                thumbnail: "🏭",
+                videoId: "kJQP7kiw5Fk",
+                category: "معارض صناعية"
+              },
+              {
+                title: "فعالية البنك الأهلي",
+                description: "افتتاح فرع جديد بتصميم عصري",
+                thumbnail: "🏦",
+                videoId: "y6120QOlsfU",
+                category: "فعاليات مؤسسية"
+              },
+              {
+                title: "ملتقى جامعة الملك سعود",
+                description: "فعالية تعليمية تفاعلية للطلاب",
+                thumbnail: "🎓",
+                videoId: "dQw4w9WgXcQ",
+                category: "فعاليات تعليمية"
+              },
+              {
+                title: "مهرجان مدارس الرياض",
+                description: "مهرجان سنوي للأطفال والعائلات",
+                thumbnail: "🏫",
+                videoId: "9bZkp7q19f0",
+                category: "مهرجانات"
+              }
+            ].map((video, index) => (
+              <div
+                key={index}
+                className="group bg-white/10 backdrop-blur-lg rounded-3xl p-6 border border-white/10 hover:border-white/30 transform hover:-translate-y-1 hover:scale-102 transition-all duration-200 relative overflow-hidden"
+              >
+                {/* Background Pattern */}
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-blue-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+                
+                <div className="relative z-10">
+                  {/* Video Thumbnail */}
+                  <div className="relative mb-6 group cursor-pointer">
+                    <div className="w-full h-48 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl flex items-center justify-center text-6xl mb-4 group-hover:scale-105 transition-transform duration-200">
+                      {video.thumbnail}
+                    </div>
+                    
+                    {/* Play Button Overlay */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-20 h-20 bg-gradient-to-r from-red-500 to-red-600 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-200">
+                        <Play className="text-white ml-1" size={32} />
+                      </div>
+                    </div>
+                    
+                    {/* Category Badge */}
+                    <div className="absolute top-4 right-4">
+                      <span className="px-3 py-1 bg-gradient-to-r from-blue-500 to-purple-500 text-white text-xs font-bold rounded-full">
+                        {video.category}
+                      </span>
+                    </div>
+                  </div>
+                  
+                  {/* Video Info */}
+                  <h3 className="text-xl font-black text-white mb-3 group-hover:text-yellow-300 transition-colors duration-200">
+                    {video.title}
+                  </h3>
+                  
+                  <p className="text-gray-300 mb-4 group-hover:text-gray-200 transition-colors duration-200">
+                    {video.description}
+                  </p>
+                  
+                  {/* Watch Button */}
+                  <button 
+                    onClick={() => window.open(`https://www.youtube.com/watch?v=${video.videoId}`, '_blank')}
+                    className="w-full px-6 py-3 bg-gradient-to-r from-red-500 to-red-600 text-white font-bold rounded-2xl hover:shadow-lg transform hover:scale-102 transition-all duration-150 flex items-center justify-center space-x-reverse space-x-3 group-hover:from-red-400 group-hover:to-red-500"
+                  >
+                    <Play size={20} />
+                    <span>شاهد الفيديو</span>
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* CTA Section */}
+          <div className="text-center">
+            <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-12 max-w-4xl mx-auto border border-white/20 relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10"></div>
+              
+              <div className="relative z-10">
+                <div className="w-16 h-16 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-8">
+                  <span className="text-2xl">🎬</span>
+                </div>
+                
+                <h3 className="text-3xl font-black text-white mb-6">مستعد لرؤية المزيد؟</h3>
+                
+                <p className="mb-10 leading-relaxed text-lg text-gray-200">
+                  اكتشف المزيد من أعمالنا المميزة في قناتنا على يوتيوب
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <button 
+                    onClick={() => window.open('https://www.youtube.com/@tawq-events', '_blank')}
+                    className="px-10 py-5 bg-gradient-to-r from-red-500 to-red-600 text-white font-bold text-lg rounded-2xl hover:shadow-lg transform hover:scale-102 transition-all duration-150 flex items-center justify-center space-x-reverse space-x-3"
+                  >
+                    <span className="text-2xl">📺</span>
+                    <span>قناتنا على يوتيوب</span>
+                  </button>
+                  
+                  <button 
+                    onClick={() => scrollToSection('contact')}
+                    className="px-10 py-5 bg-white/20 backdrop-blur-sm text-white font-bold text-lg rounded-2xl border border-white/30 hover:bg-white/30 transition-all duration-200 flex items-center justify-center space-x-reverse space-x-3"
+                  >
+                    <Phone size={20} />
+                    <span>اطلب عرض أسعار</span>
                   </button>
                 </div>
               </div>
@@ -480,33 +687,44 @@ const TawqWebsite = () => {
             </h2>
             <div className="w-32 h-2 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-full mx-auto mb-8"></div>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              نفتخر بثقة عملائنا الكرام من مختلف القطاعات والشركات الكبرى في المملكة العربية السعودية
+              نفتخر بثقة عملائنا الكرام من مختلف القطاعات والشركات الكبرى في المملكة العربية السعودية، حيث نقدم خدماتنا بمعايير عالمية وجودة استثنائية
             </p>
           </div>
 
           {/* Client Categories */}
-          <div className="grid md:grid-cols-3 gap-8 mb-20">
+          <div className="grid md:grid-cols-4 gap-8 mb-20">
             {[
               {
                 title: "القطاع الحكومي",
                 description: "وزارات وهيئات حكومية",
                 icon: "🏛️",
                 gradient: "from-blue-500 to-cyan-500",
-                bgGradient: "from-blue-50 to-cyan-50"
+                bgGradient: "from-blue-50 to-cyan-50",
+                services: ["تنظيم الفعاليات", "المعارض والمؤتمرات", "الإنتاج الفني"]
               },
               {
                 title: "القطاع الخاص",
                 description: "شركات ومؤسسات خاصة",
                 icon: "🏢",
                 gradient: "from-purple-500 to-pink-500",
-                bgGradient: "from-purple-50 to-pink-50"
+                bgGradient: "from-purple-50 to-pink-50",
+                services: ["التسويق الرقمي", "تنظيم الفعاليات", "الإنتاج الفني"]
               },
               {
                 title: "القطاع التعليمي",
                 description: "جامعات ومدارس",
                 icon: "🎓",
                 gradient: "from-emerald-500 to-teal-500",
-                bgGradient: "from-emerald-50 to-teal-50"
+                bgGradient: "from-emerald-50 to-teal-50",
+                services: ["تنظيم الفعاليات", "المعارض والمؤتمرات", "التسويق الرقمي"]
+              },
+              {
+                title: "القطاع الصحي",
+                description: "مستشفيات ومراكز طبية",
+                icon: "🏥",
+                gradient: "from-red-500 to-pink-500",
+                bgGradient: "from-red-50 to-pink-50",
+                services: ["تنظيم المؤتمرات", "التسويق الرقمي", "الإنتاج الفني"]
               }
             ].map((category, index) => (
               <div
@@ -524,9 +742,19 @@ const TawqWebsite = () => {
                     {category.title}
                   </h3>
                   
-                  <p className="text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
+                  <p className="text-gray-600 group-hover:text-gray-700 transition-colors duration-300 mb-4">
                     {category.description}
                   </p>
+                  
+                  {/* Services for this category */}
+                  <div className="space-y-2">
+                    {category.services.map((service, serviceIndex) => (
+                      <div key={serviceIndex} className="flex items-center justify-center text-sm text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
+                        <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full ml-2"></div>
+                        <span>{service}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             ))}
@@ -538,18 +766,18 @@ const TawqWebsite = () => {
             <div className="flex animate-scroll-right mb-8">
               <div className="flex space-x-8 px-4">
                 {[
-                  { name: "وزارة التجارة", logo: "🏛️" },
-                  { name: "وزارة التعليم", logo: "🎓" },
-                  { name: "وزارة الصحة", logo: "🏥" },
-                  { name: "الهيئة الملكية", logo: "👑" },
-                  { name: "أرامكو", logo: "🛢️" },
-                  { name: "سابك", logo: "🏭" },
-                  { name: "البنك الأهلي", logo: "🏦" },
-                  { name: "الراجحي", logo: "💳" },
-                  { name: "جامعة الملك سعود", logo: "🎓" },
-                  { name: "جامعة الملك فهد", logo: "🎓" },
-                  { name: "مدارس الأنجال", logo: "🏫" },
-                  { name: "مدارس الرياض", logo: "🏫" }
+                  { name: "وزارة التجارة", logo: "🏛️", category: "حكومي", services: ["معارض", "مؤتمرات"] },
+                  { name: "وزارة التعليم", logo: "🎓", category: "حكومي", services: ["فعاليات", "معارض"] },
+                  { name: "وزارة الصحة", logo: "🏥", category: "حكومي", services: ["مؤتمرات", "فعاليات"] },
+                  { name: "الهيئة الملكية", logo: "👑", category: "حكومي", services: ["فعاليات", "معارض"] },
+                  { name: "أرامكو", logo: "🛢️", category: "خاص", services: ["فعاليات", "تسويق رقمي"] },
+                  { name: "سابك", logo: "🏭", category: "خاص", services: ["معارض", "إنتاج فني"] },
+                  { name: "البنك الأهلي", logo: "🏦", category: "خاص", services: ["فعاليات", "تسويق رقمي"] },
+                  { name: "الراجحي", logo: "💳", category: "خاص", services: ["فعاليات", "تسويق رقمي"] },
+                  { name: "جامعة الملك سعود", logo: "🎓", category: "تعليمي", services: ["مؤتمرات", "فعاليات"] },
+                  { name: "جامعة الملك فهد", logo: "🎓", category: "تعليمي", services: ["مؤتمرات", "فعاليات"] },
+                  { name: "مدارس الأنجال", logo: "🏫", category: "تعليمي", services: ["فعاليات", "إنتاج فني"] },
+                  { name: "مدارس الرياض", logo: "🏫", category: "تعليمي", services: ["فعاليات", "إنتاج فني"] }
                 ].map((client, index) => (
                   <div
                     key={index}
@@ -560,9 +788,21 @@ const TawqWebsite = () => {
                         <span className="text-2xl">{client.logo}</span>
                       </div>
                       
-                      <h4 className="text-sm font-bold text-gray-700 group-hover:text-blue-600 transition-colors duration-150">
+                      <h4 className="text-sm font-bold text-gray-700 group-hover:text-blue-600 transition-colors duration-150 mb-2">
                         {client.name}
                       </h4>
+                      
+                      <div className="text-xs text-gray-500 mb-2">
+                        {client.category}
+                      </div>
+                      
+                      <div className="flex flex-wrap justify-center gap-1">
+                        {client.services.map((service, serviceIndex) => (
+                          <span key={serviceIndex} className="px-2 py-1 bg-gradient-to-r from-purple-100 to-blue-100 text-purple-700 text-xs rounded-full">
+                            {service}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -710,170 +950,7 @@ const TawqWebsite = () => {
         </div>
       </section>
 
-      {/* Our Works Section */}
-      <section id="works" className="py-32 bg-gradient-to-br from-gray-900 via-purple-900/20 to-blue-900/20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-purple-900/20 to-blue-900/20">
-          <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/20"></div>
-        </div>
-        
-        {/* Animated Background */}
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-20 w-80 h-80 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full blur-3xl"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-gradient-to-r from-emerald-500/10 to-teal-500/10 rounded-full blur-3xl"></div>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-white">
-          <div className="text-center mb-24">
-            <div className="inline-block px-6 py-3 rounded-full bg-white/10 backdrop-blur-sm text-white font-bold text-sm mb-8 border border-white/20">
-              🎬 أعمالنا المميزة
-            </div>
-            <h2 className="text-5xl md:text-6xl font-black mb-8">
-              <span className="bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500 bg-clip-text text-transparent">
-                أعمالنا
-              </span>
-            </h2>
-            <div className="w-32 h-2 bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500 rounded-full mx-auto mb-8"></div>
-            <p className="text-xl text-gray-200 max-w-4xl mx-auto">
-              شاهد مجموعة من أفضل أعمالنا في تنظيم الفعاليات والمعارض والملتقيات
-            </p>
-          </div>
-
-          {/* Videos Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-            {[
-              {
-                title: "فعالية وزارة التجارة السنوية",
-                description: "معرض تجاري ضخم بمعايير عالمية",
-                thumbnail: "🏛️",
-                videoId: "dQw4w9WgXcQ",
-                category: "فعاليات حكومية"
-              },
-              {
-                title: "ملتقى أرامكو للطاقة",
-                description: "فعالية تقنية متطورة مع أحدث التقنيات",
-                thumbnail: "🛢️",
-                videoId: "9bZkp7q19f0",
-                category: "فعاليات تقنية"
-              },
-              {
-                title: "معرض سابك للصناعات",
-                description: "معرض صناعي تفاعلي بمساحة 5000 متر",
-                thumbnail: "🏭",
-                videoId: "kJQP7kiw5Fk",
-                category: "معارض صناعية"
-              },
-              {
-                title: "فعالية البنك الأهلي",
-                description: "افتتاح فرع جديد بتصميم عصري",
-                thumbnail: "🏦",
-                videoId: "y6120QOlsfU",
-                category: "فعاليات مؤسسية"
-              },
-              {
-                title: "ملتقى جامعة الملك سعود",
-                description: "فعالية تعليمية تفاعلية للطلاب",
-                thumbnail: "🎓",
-                videoId: "dQw4w9WgXcQ",
-                category: "فعاليات تعليمية"
-              },
-              {
-                title: "مهرجان مدارس الرياض",
-                description: "مهرجان سنوي للأطفال والعائلات",
-                thumbnail: "🏫",
-                videoId: "9bZkp7q19f0",
-                category: "مهرجانات"
-              }
-            ].map((video, index) => (
-              <div
-                key={index}
-                className="group bg-white/10 backdrop-blur-lg rounded-3xl p-6 border border-white/10 hover:border-white/30 transform hover:-translate-y-2 hover:scale-105 transition-all duration-500 relative overflow-hidden"
-              >
-                {/* Background Pattern */}
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-blue-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                
-                <div className="relative z-10">
-                  {/* Video Thumbnail */}
-                  <div className="relative mb-6 group cursor-pointer">
-                    <div className="w-full h-48 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl flex items-center justify-center text-6xl mb-4 group-hover:scale-105 transition-transform duration-300">
-                      {video.thumbnail}
-                    </div>
-                    
-                    {/* Play Button Overlay */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-20 h-20 bg-gradient-to-r from-red-500 to-red-600 rounded-full flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-300">
-                        <Play className="text-white ml-1" size={32} />
-                      </div>
-                    </div>
-                    
-                    {/* Category Badge */}
-                    <div className="absolute top-4 right-4">
-                      <span className="px-3 py-1 bg-gradient-to-r from-blue-500 to-purple-500 text-white text-xs font-bold rounded-full">
-                        {video.category}
-                      </span>
-                    </div>
-                  </div>
-                  
-                  {/* Video Info */}
-                  <h3 className="text-xl font-black text-white mb-3 group-hover:text-yellow-300 transition-colors duration-300">
-                    {video.title}
-                  </h3>
-                  
-                  <p className="text-gray-300 mb-4 group-hover:text-gray-200 transition-colors duration-300">
-                    {video.description}
-                  </p>
-                  
-                  {/* Watch Button */}
-                  <button 
-                    onClick={() => window.open(`https://www.youtube.com/watch?v=${video.videoId}`, '_blank')}
-                    className="w-full px-6 py-3 bg-gradient-to-r from-red-500 to-red-600 text-white font-bold rounded-2xl hover:shadow-lg transform hover:scale-102 transition-all duration-150 flex items-center justify-center space-x-reverse space-x-3 group-hover:from-red-400 group-hover:to-red-500"
-                  >
-                    <Play size={20} />
-                    <span>شاهد الفيديو</span>
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* CTA Section */}
-          <div className="text-center">
-            <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-12 max-w-4xl mx-auto border border-white/20 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10"></div>
-              
-              <div className="relative z-10">
-                <div className="w-16 h-16 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-8">
-                  <span className="text-2xl">🎬</span>
-                </div>
-                
-                <h3 className="text-3xl font-black text-white mb-6">مستعد لرؤية المزيد؟</h3>
-                
-                <p className="mb-10 leading-relaxed text-lg text-gray-200">
-                  اكتشف المزيد من أعمالنا المميزة في قناتنا على يوتيوب
-                </p>
-                
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <button 
-                    onClick={() => window.open('https://www.youtube.com/@tawq-events', '_blank')}
-                    className="px-10 py-5 bg-gradient-to-r from-red-500 to-red-600 text-white font-bold text-lg rounded-2xl hover:shadow-lg transform hover:scale-102 transition-all duration-150 flex items-center justify-center space-x-reverse space-x-3"
-                  >
-                    <span className="text-2xl">📺</span>
-                    <span>قناتنا على يوتيوب</span>
-                  </button>
-                  
-                  <button 
-                    onClick={() => scrollToSection('contact')}
-                    className="px-10 py-5 bg-white/20 backdrop-blur-sm text-white font-bold text-lg rounded-2xl border border-white/30 hover:bg-white/30 transition-all duration-300 flex items-center justify-center space-x-reverse space-x-3"
-                  >
-                    <Phone size={20} />
-                    <span>اطلب عرض أسعار</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Stats Section */}
       <section id="stats" className="py-32 relative overflow-hidden">
@@ -1163,7 +1240,7 @@ const TawqWebsite = () => {
                 <div className="w-3 h-3 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full ml-2 animate-pulse"></div>
               </div>
               <p className="text-gray-300 leading-relaxed mb-8 text-lg">
-                شركة سعودية متخصصة في تنظيم الفعاليات الكبرى والمعارض والملتقيات والإنتاج الفني والتقني بمعايير عالمية وجودة استثنائية.
+                شركة سعودية متخصصة في تنظيم الفعاليات الكبرى والمعارض والمؤتمرات والتسويق الرقمي والإنتاج الفني والتقني بمعايير عالمية وجودة استثنائية.
               </p>
               <div className="mb-8">
                 <a 
@@ -1187,9 +1264,9 @@ const TawqWebsite = () => {
               <ul className="space-y-4 text-gray-300">
                 {[
                   "تنظيم الفعاليات الكبرى",
-                  "المعارض والملتقيات",
-                  "الفعاليات المؤسسية",
-                  "الإنتاج الفني والتقني"
+                  "تنظيم المعارض والمؤتمرات",
+                  "التسويق الرقمي",
+                  "الإنتاج الفني"
                 ].map((service, index) => (
                   <li key={index} className="hover:text-white transition-colors duration-300 cursor-pointer flex items-center">
                     <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full ml-3"></div>
