@@ -546,20 +546,23 @@ const TawqWebsite = () => {
             ))}
           </div>
 
-          {/* Platform CTA Section */}
+          {/* Success Stories CTA Section */}
           <div className="text-center mt-16">
-            <div className="bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500 rounded-3xl p-12 shadow-2xl max-w-4xl mx-auto relative overflow-hidden">
+            <div className="bg-gradient-to-r from-emerald-400 via-teal-500 to-cyan-500 rounded-3xl p-12 shadow-2xl max-w-4xl mx-auto relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent"></div>
               <div className="relative z-10">
-                <div className="text-4xl mb-6">🌟</div>
-                <h3 className="text-3xl font-black text-black mb-6">اكتشف منصة طوق للكاستينج</h3>
+                <div className="text-4xl mb-6">🏆</div>
+                <h3 className="text-3xl font-black text-black mb-6">قصص نجاح عملائنا</h3>
                 <p className="text-xl text-black/80 mb-10 max-w-2xl mx-auto">
-                  منصة رقمية متخصصة في إدارة مواهب الكاستينج للممثلين والأطفال والشباب، مكملة لخدماتنا في تنظيم الفعاليات والتسويق الرقمي
+                  اكتشف كيف ساعدنا عملاءنا في تحقيق أهدافهم من خلال خدماتنا المميزة في تنظيم الفعاليات والتسويق الرقمي
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <button className="px-10 py-5 bg-white/20 backdrop-blur-sm text-black font-bold text-lg rounded-2xl border border-black/30 hover:bg-white/30 transition-all duration-300 flex items-center justify-center space-x-reverse space-x-3">
+                  <button 
+                    onClick={() => scrollToSection('works')}
+                    className="px-10 py-5 bg-white/20 backdrop-blur-sm text-black font-bold text-lg rounded-2xl border border-black/30 hover:bg-white/30 transition-all duration-300 flex items-center justify-center space-x-reverse space-x-3"
+                  >
                     <Play size={20} />
-                    <span>تعرف على المزيد</span>
+                    <span>شاهد مشاريعنا</span>
                   </button>
                 </div>
               </div>
@@ -1214,7 +1217,7 @@ const TawqWebsite = () => {
         </div>
       </section>
 
-      {/* Platform Section */}
+      {/* Success Stories Section */}
       <section className="py-32 bg-gradient-to-br from-gray-900 via-purple-900/20 to-blue-900/20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gray-900/95"></div>
         <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-r from-purple-500/10 to-transparent rounded-full blur-3xl"></div>
@@ -1223,37 +1226,87 @@ const TawqWebsite = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-white">
           <div className="text-center mb-20">
             <div className="inline-block px-6 py-3 rounded-full bg-white/10 backdrop-blur-sm text-white font-bold text-sm mb-8 border border-white/20">
-              🌟 منصة طوق للكاستينج
+              🏆 قصص نجاح عملائنا
             </div>
             <h2 className="text-5xl md:text-6xl font-black mb-8">
-              <span className="bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500 bg-clip-text text-transparent">
-                منصة الكاستينج الرقمية
+              <span className="bg-gradient-to-r from-emerald-400 via-teal-500 to-cyan-500 bg-clip-text text-transparent">
+                حالات النجاح
               </span>
             </h2>
-            <div className="w-32 h-2 bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500 rounded-full mx-auto mb-8"></div>
+            <div className="w-32 h-2 bg-gradient-to-r from-emerald-400 via-teal-500 to-cyan-500 rounded-full mx-auto mb-8"></div>
             <p className="text-xl text-gray-200 max-w-4xl mx-auto leading-relaxed">
-              منصة رقمية متخصصة في إدارة مواهب الكاستينج للممثلين والأطفال والشباب
+              شاهد كيف ساعدنا عملاءنا في تحقيق أهدافهم من خلال خدماتنا المميزة
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {[
-              { number: "5000+", label: "موهبة مسجلة", icon: "👥", color: "from-purple-500 to-pink-500" },
-              { number: "200+", label: "شركة إنتاج", icon: "🏢", color: "from-blue-500 to-cyan-500" },
-              { number: "1000+", label: "مشروع مكتمل", icon: "🎬", color: "from-emerald-500 to-teal-500" },
-              { number: "98%", label: "نسبة رضا العملاء", icon: "⭐", color: "from-yellow-500 to-orange-500" }
-            ].map((stat, index) => (
-              <div key={index} className="text-center group">
-                <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 group-hover:bg-white/20 transition-all duration-500 border border-white/10 hover:border-white/30 transform hover:-translate-y-2 hover:scale-105 relative overflow-hidden">
-                  <div className={`absolute inset-0 bg-gradient-to-r ${stat.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
-                  <div className="relative z-10 text-4xl mb-4">{stat.icon}</div>
-                  <div className="relative z-10 text-4xl md:text-5xl font-black mb-4">
-                    <span className={`bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`}>
-                      {stat.number}
-                    </span>
+              {
+                title: "وزارة التجارة",
+                description: "معرض تجاري ضخم بمعايير عالمية",
+                result: "نجحنا في تنظيم معرض تجاري ضخم استقطب أكثر من 50,000 زائر",
+                icon: "🏛️",
+                color: "from-blue-500 to-cyan-500"
+              },
+              {
+                title: "أرامكو",
+                description: "فعالية تقنية متطورة مع أحدث التقنيات",
+                result: "فعالية تقنية متطورة استخدمت أحدث التقنيات التفاعلية",
+                icon: "🛢️",
+                color: "from-emerald-500 to-teal-500"
+              },
+              {
+                title: "سابك",
+                description: "معرض صناعي تفاعلي بمساحة 5000 متر",
+                result: "معرض صناعي تفاعلي نجح في عرض منتجات الشركة بطرق مبتكرة",
+                icon: "🏭",
+                color: "from-purple-500 to-pink-500"
+              },
+              {
+                title: "البنك الأهلي",
+                description: "افتتاح فرع جديد بتصميم عصري",
+                result: "افتتاح فرع جديد بتصميم عصري ومتطور",
+                icon: "🏦",
+                color: "from-orange-500 to-yellow-500"
+              },
+              {
+                title: "جامعة الملك سعود",
+                description: "فعالية تعليمية تفاعلية للطلاب",
+                result: "فعالية تعليمية تفاعلية نجحت في جذب أكثر من 10,000 طالب",
+                icon: "🎓",
+                color: "from-red-500 to-pink-500"
+              },
+              {
+                title: "مدارس الرياض",
+                description: "مهرجان سنوي للأطفال والعائلات",
+                result: "مهرجان سنوي للأطفال والعائلات حقق نجاحاً كبيراً",
+                icon: "🏫",
+                color: "from-indigo-500 to-purple-500"
+              }
+            ].map((story, index) => (
+              <div
+                key={index}
+                className="group bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/10 hover:border-white/30 transform hover:-translate-y-2 hover:scale-105 transition-all duration-500 relative overflow-hidden"
+              >
+                <div className={`absolute inset-0 bg-gradient-to-r ${story.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
+                
+                <div className="relative z-10">
+                  <div className={`w-20 h-20 bg-gradient-to-r ${story.color} rounded-2xl flex items-center justify-center text-4xl mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    {story.icon}
                   </div>
-                  <div className="relative z-10 text-lg font-bold text-gray-200 group-hover:text-white transition-colors duration-300">
-                    {stat.label}
+                  
+                  <h3 className="text-2xl font-black text-white mb-4 text-center group-hover:text-emerald-300 transition-colors duration-300">
+                    {story.title}
+                  </h3>
+                  
+                  <p className="text-gray-300 mb-4 text-center group-hover:text-gray-200 transition-colors duration-300">
+                    {story.description}
+                  </p>
+                  
+                  <div className="text-center">
+                    <div className="text-sm text-emerald-300 font-medium">
+                      {story.result}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1262,16 +1315,19 @@ const TawqWebsite = () => {
 
           <div className="text-center">
             <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-12 max-w-5xl mx-auto border border-white/20 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-teal-500/10 to-cyan-500/10"></div>
               <div className="relative z-10">
-                <h3 className="text-3xl md:text-4xl font-black mb-6">مستعد لبدء رحلتك في عالم الكاستينج؟</h3>
+                <h3 className="text-3xl md:text-4xl font-black mb-6">مستعد لتصبح قصة نجاح التالية؟</h3>
                 <p className="text-xl text-gray-200 mb-10 max-w-3xl mx-auto">
-                  انضم إلى آلاف المواهب والشركات الناجحة على منصة طوق للكاستينج الرقمية
+                  دعنا نساعدك في تحقيق أهدافك من خلال خدماتنا المميزة في تنظيم الفعاليات والتسويق الرقمي
                 </p>
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                  <button className="px-12 py-6 bg-white/20 backdrop-blur-sm text-white font-bold text-xl rounded-2xl border border-white/30 hover:bg-white/30 transition-all duration-300 flex items-center justify-center space-x-reverse space-x-3">
-                    <Play size={24} />
-                    <span>شاهد الفيديو التعريفي</span>
+                  <button 
+                    onClick={() => scrollToSection('contact')}
+                    className="px-12 py-6 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-bold text-xl rounded-2xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-reverse space-x-3"
+                  >
+                    <Sparkles size={24} />
+                    <span>ابدأ مشروعك الآن</span>
                   </button>
                 </div>
               </div>
@@ -1296,14 +1352,9 @@ const TawqWebsite = () => {
                 <div className="w-3 h-3 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full ml-2 animate-pulse"></div>
               </div>
               <p className="text-gray-300 leading-relaxed mb-8 text-lg">
-                شركة سعودية متخصصة في تنظيم الفعاليات والمعارض والمؤتمرات والتسويق الرقمي والإنتاج الفني والتقني بمعايير عالمية وجودة استثنائية.
+                شركة سعودية متخصصة في تنظيم الفعاليات والمعارض والمؤتمرات والتسويق الرقمي والإنتاج الفني والتقني بمعايير عالمية وجودة استثنائية. نرافق عملاءنا من الفكرة إلى لحظة الانبهار.
               </p>
-              <div className="mb-8">
-                <div className="inline-flex items-center space-x-reverse space-x-3 px-6 py-3 bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500 text-black font-bold rounded-xl">
-                  <Globe size={20} />
-                  <span>منصة الكاستينج الرقمية</span>
-                </div>
-              </div>
+
             </div>
             
             <div>
