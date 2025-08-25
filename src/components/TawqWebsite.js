@@ -6,6 +6,8 @@ const TawqWebsite = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [currentSlide, setCurrentSlide] = useState(0);
   const [scrolled, setScrolled] = useState(false);
+  const [selectedService, setSelectedService] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,6 +16,24 @@ const TawqWebsite = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === 'Escape') {
+        setIsModalOpen(false);
+      }
+    };
+    
+    if (isModalOpen) {
+      document.addEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'hidden';
+    }
+    
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'unset';
+    };
+  }, [isModalOpen]);
 
   const heroSlides = [
     {
@@ -38,33 +58,49 @@ const TawqWebsite = () => {
 
     const services = [
     { 
-      title: "تنظيم الفعاليات الكبرى", 
-      description: "فعاليات استثنائية بمعايير عالمية تحاكي الحواس وتجسد هوية عملائنا", 
+      title: "تنظيم الفعاليات والمعارض والمؤتمرات", 
+      description: "خدمة شاملة ومتكاملة لتنظيم جميع أنواع الفعاليات والمعارض والمؤتمرات بمعايير عالمية وجودة استثنائية", 
       icon: <Sparkles size={28} />, 
-      gradient: "from-purple-500 via-pink-500 to-rose-500", 
-      bgGradient: "from-purple-50 to-pink-50", 
-      hoverGradient: "from-purple-600 to-pink-600",
+      gradient: "from-purple-500 via-blue-500 to-cyan-500", 
+      bgGradient: "from-purple-50 via-blue-50 to-cyan-50", 
+      hoverGradient: "from-purple-600 via-blue-600 to-cyan-600",
       details: [
         "تخطيط وإدارة شاملة للفعاليات",
         "تصميم وتنفيذ إبداعي",
         "خدمات لوجستية متكاملة",
         "إدارة الحضور والضيوف",
         "تقارير شاملة وتقييم النجاح"
-      ]
-    },
-    { 
-      title: "تنظيم المعارض والمؤتمرات", 
-      description: "خدمة شاملة لتنظيم الفعاليات والمعارض والمؤتمرات من البداية إلى النهاية", 
-      icon: <Globe size={28} />, 
-      gradient: "from-blue-500 via-cyan-500 to-teal-500", 
-      bgGradient: "from-blue-50 to-cyan-50", 
-      hoverGradient: "from-blue-600 to-cyan-600",
-      details: [
-        "التخطيط والإدارة الشاملة",
-        "التصميم والتنفيذ الإبداعي",
-        "الخدمات اللوجستية المتقدمة",
-        "إدارة الحضور والمشاركين",
-        "التقارير والتقييم الشامل"
+      ],
+      fullDescription: "نقدم خدمة شاملة ومتكاملة لتنظيم جميع أنواع الفعاليات والمعارض والمؤتمرات بمعايير عالمية وجودة استثنائية. نبدأ بفهم متطلباتك وأهدافك، ثم نضع خطة استراتيجية شاملة تشمل كل التفاصيل من التصميم إلى التنفيذ، مع ضمان نجاح كل حدث من خلال تخطيط دقيق وتنفيذ متميز.",
+      features: [
+        "تخطيط استراتيجي شامل للفعالية/المعرض/المؤتمر",
+        "تصميم إبداعي يحاكي الحواس ويجسد الهوية",
+        "إدارة لوجستية متقدمة ومتكاملة",
+        "تقنيات حديثة وتفاعلية",
+        "إدارة الحضور والضيوف والمشاركين",
+        "تصميم أجنحة ومساحات عرض إبداعية",
+        "تغطية إعلامية شاملة",
+        "تقارير مفصلة وتقييم النجاح"
+      ],
+      process: [
+        "الاستماع لفكرتك وتحديد الأهداف",
+        "وضع خطة استراتيجية شاملة",
+        "تصميم وتطوير المفهوم الإبداعي والهوية البصرية",
+        "تخطيط المساحات والأجنحة (للمعارض والمؤتمرات)",
+        "التنفيذ والدعم الفني",
+        "المتابعة والتقييم والتطوير المستمر"
+      ],
+      examples: [
+        "الفعاليات الحكومية والرسمية",
+        "المؤتمرات والمعارض الدولية",
+        "معارض تجارية وصناعية",
+        "مؤتمرات تقنية وتعليمية",
+        "معارض عقارية واستثمارية",
+        "مؤتمرات طبية وعلمية",
+        "معارض سياحية وترفيهية",
+        "افتتاحات الشركات والمؤسسات",
+        "حفلات الشركات والمناسبات الخاصة",
+        "المهرجانات والفعاليات الثقافية"
       ]
     },
     { 
@@ -81,6 +117,31 @@ const TawqWebsite = () => {
         "محتوى إبداعي ملهم",
         "تعاون مع المؤثرين",
         "SEO & SEM متخصص"
+      ],
+      fullDescription: "نقدم حلول تسويق رقمي متكاملة ومتطورة تواكب أحدث التقنيات والاتجاهات العالمية. نركز على تحقيق نتائج ملموسة وزيادة المبيعات من خلال استراتيجيات تسويقية ذكية ومبتكرة.",
+      features: [
+        "إدارة حسابات التواصل الاجتماعي",
+        "استراتيجية تسويقية شاملة",
+        "إعلانات مدفوعة متقدمة (Google Ads, Facebook Ads)",
+        "محتوى إبداعي ومؤثر",
+        "تعاون مع المؤثرين والمشاهير",
+        "تحسين محركات البحث (SEO)",
+        "إعلانات محركات البحث (SEM)",
+        "تحليل البيانات والتقارير"
+      ],
+      process: [
+        "تحليل السوق والمنافسين",
+        "وضع استراتيجية تسويقية شاملة",
+        "إنشاء المحتوى والإعلانات",
+        "إدارة الحملات الإعلانية",
+        "المتابعة والتحسين المستمر"
+      ],
+      examples: [
+        "إدارة حسابات الشركات على وسائل التواصل",
+        "حملات إعلانية مدفوعة",
+        "تسويق المحتوى والمدونات",
+        "تسويق المؤثرين",
+        "تحسين محركات البحث"
       ]
     },
     { 
@@ -97,6 +158,31 @@ const TawqWebsite = () => {
         "التصوير الجوي (Drone)",
         "التغطية الإعلامية الشاملة",
         "إنتاج المحتوى الرقمي"
+      ],
+      fullDescription: "نقدم خدمات إنتاج فني متكاملة ومتطورة تشمل التصوير والإنتاج المرئي والمسموع. نستخدم أحدث التقنيات والمعدات لضمان جودة عالية ومحتوى إبداعي يحقق أهدافك التسويقية.",
+      features: [
+        "التصوير الإعلاني الاحترافي",
+        "إنتاج الأفلام القصيرة والدعائية",
+        "المونتاج والإخراج البصري المتقدم",
+        "التصوير الجوي باستخدام الطائرات المسيرة",
+        "التغطية الإعلامية الشاملة للفعاليات",
+        "إنتاج المحتوى الرقمي والتفاعلي",
+        "تصميم الرسومات والمواد البصرية",
+        "تسجيل وإنتاج الصوتيات"
+      ],
+      process: [
+        "فهم متطلبات المشروع",
+        "تطوير المفهوم الإبداعي",
+        "التخطيط والإعداد",
+        "التنفيذ والإنتاج",
+        "المونتاج والمراجعة النهائية"
+      ],
+      examples: [
+        "أفلام إعلانية للشركات",
+        "مقاطع فيديو للمنتجات",
+        "تغطية الفعاليات والمعارض",
+        "محتوى وسائل التواصل الاجتماعي",
+        "أفلام وثائقية وتقارير"
       ]
     }
   ];
@@ -178,6 +264,7 @@ const TawqWebsite = () => {
                   )}
                 </button>
               ))}
+
             </div>
 
             {/* Mobile Menu Button */}
@@ -220,6 +307,7 @@ const TawqWebsite = () => {
                   <span>{item.label}</span>
                 </button>
               ))}
+
             </div>
           </div>
         </div>
@@ -269,28 +357,10 @@ const TawqWebsite = () => {
                 <Phone size={20} />
                 <span>تواصل معنا</span>
               </button>
-              <a 
-                href="https://toqtalent.com/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="px-10 py-5 bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500 text-black font-bold text-lg rounded-2xl hover:shadow-lg transform hover:scale-102 transition-all duration-150 flex items-center justify-center space-x-reverse space-x-3 group"
-              >
-                <Globe className="group-hover:animate-spin transition-transform duration-300" size={24} />
-                <span>انتقل للمنصة</span>
-                <ArrowLeft className="group-hover:-translate-x-1 transition-transform duration-150" size={20} />
-              </a>
             </div>
 
             {/* Trust Indicators */}
             <div className="flex flex-wrap items-center gap-8 text-gray-300">
-              <div className="flex items-center space-x-reverse space-x-2">
-                <div className="flex">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={16} className="text-yellow-400 fill-current" />
-                  ))}
-                </div>
-                <span className="text-sm">تقييم 5 نجوم</span>
-              </div>
               <div className="flex items-center space-x-reverse space-x-2">
                 <Award size={16} className="text-blue-400" />
                 <span className="text-sm">+500 فعالية ناجحة</span>
@@ -425,7 +495,7 @@ const TawqWebsite = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {services.map((service, index) => (
               <div
                 key={index}
@@ -461,10 +531,16 @@ const TawqWebsite = () => {
                   </div>
                   
                   {/* CTA */}
-                  <div className="flex items-center text-purple-600 font-bold opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-200">
-                    <span>اعرف المزيد</span>
+                  <button 
+                    onClick={() => {
+                      setSelectedService(service);
+                      setIsModalOpen(true);
+                    }}
+                    className="flex items-center text-purple-600 font-bold opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-200 hover:text-purple-700"
+                  >
+                    <span>اعرض المزيد</span>
                     <ArrowLeft className="mr-2 group-hover:-translate-x-1 transition-transform" size={18} />
-                  </div>
+                  </button>
                 </div>
               </div>
             ))}
@@ -481,16 +557,6 @@ const TawqWebsite = () => {
                   منصة رقمية متخصصة في إدارة مواهب الكاستينج للممثلين والأطفال والشباب، مكملة لخدماتنا في تنظيم الفعاليات والتسويق الرقمي
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <a 
-                    href="https://toqtalent.com/" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="px-10 py-5 bg-black text-white font-bold text-lg rounded-2xl hover:shadow-lg transform hover:scale-102 transition-all duration-150 flex items-center justify-center space-x-reverse space-x-3 group"
-                  >
-                    <Globe className="group-hover:animate-spin transition-transform duration-300" size={20} />
-                    <span>انتقل للمنصة الآن</span>
-                    <ArrowLeft className="group-hover:-translate-x-1 transition-transform duration-150" size={20} />
-                  </a>
                   <button className="px-10 py-5 bg-white/20 backdrop-blur-sm text-black font-bold text-lg rounded-2xl border border-black/30 hover:bg-white/30 transition-all duration-300 flex items-center justify-center space-x-reverse space-x-3">
                     <Play size={20} />
                     <span>تعرف على المزيد</span>
@@ -1203,16 +1269,6 @@ const TawqWebsite = () => {
                   انضم إلى آلاف المواهب والشركات الناجحة على منصة طوق للكاستينج الرقمية
                 </p>
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                  <a 
-                    href="https://toqtalent.com/" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="px-12 py-6 bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500 text-black font-bold text-xl rounded-2xl hover:shadow-lg transform hover:scale-102 transition-all duration-150 flex items-center justify-center space-x-reverse space-x-3 group"
-                  >
-                    <Globe className="group-hover:animate-spin transition-transform duration-300" size={28} />
-                    <span>انتقل للمنصة الآن</span>
-                    <ArrowLeft className="group-hover:-translate-x-1 transition-transform duration-150" size={24} />
-                  </a>
                   <button className="px-12 py-6 bg-white/20 backdrop-blur-sm text-white font-bold text-xl rounded-2xl border border-white/30 hover:bg-white/30 transition-all duration-300 flex items-center justify-center space-x-reverse space-x-3">
                     <Play size={24} />
                     <span>شاهد الفيديو التعريفي</span>
@@ -1240,19 +1296,13 @@ const TawqWebsite = () => {
                 <div className="w-3 h-3 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full ml-2 animate-pulse"></div>
               </div>
               <p className="text-gray-300 leading-relaxed mb-8 text-lg">
-                شركة سعودية متخصصة في تنظيم الفعاليات الكبرى والمعارض والمؤتمرات والتسويق الرقمي والإنتاج الفني والتقني بمعايير عالمية وجودة استثنائية.
+                شركة سعودية متخصصة في تنظيم الفعاليات والمعارض والمؤتمرات والتسويق الرقمي والإنتاج الفني والتقني بمعايير عالمية وجودة استثنائية.
               </p>
               <div className="mb-8">
-                <a 
-                  href="https://toqtalent.com/" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="inline-flex items-center space-x-reverse space-x-3 px-6 py-3 bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500 text-black font-bold rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-300"
-                >
+                <div className="inline-flex items-center space-x-reverse space-x-3 px-6 py-3 bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500 text-black font-bold rounded-xl">
                   <Globe size={20} />
                   <span>منصة الكاستينج الرقمية</span>
-                  <ArrowLeft size={18} />
-                </a>
+                </div>
               </div>
             </div>
             
@@ -1263,8 +1313,7 @@ const TawqWebsite = () => {
               </h4>
               <ul className="space-y-4 text-gray-300">
                 {[
-                  "تنظيم الفعاليات الكبرى",
-                  "تنظيم المعارض والمؤتمرات",
+                  "تنظيم الفعاليات والمعارض والمؤتمرات",
                   "التسويق الرقمي",
                   "الإنتاج الفني"
                 ].map((service, index) => (
@@ -1311,6 +1360,123 @@ const TawqWebsite = () => {
           </div>
         </div>
       </footer>
+
+      {/* Service Details Modal */}
+      {isModalOpen && selectedService && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          {/* Backdrop */}
+          <div 
+            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+            onClick={() => setIsModalOpen(false)}
+          ></div>
+          
+          {/* Modal Content */}
+          <div className="relative bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-gray-100">
+            {/* Header */}
+            <div className={`p-8 ${selectedService.bgGradient} rounded-t-3xl relative overflow-hidden`}>
+              <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent"></div>
+              <div className="relative z-10 flex items-center justify-between">
+                <div className="flex items-center space-x-reverse space-x-4">
+                  <div className={`w-16 h-16 bg-gradient-to-r ${selectedService.gradient} rounded-2xl flex items-center justify-center text-white shadow-xl`}>
+                    {selectedService.icon}
+                  </div>
+                  <div>
+                    <h2 className="text-3xl font-black text-gray-900 mb-2">{selectedService.title}</h2>
+                    <p className="text-gray-700 text-lg">{selectedService.description}</p>
+                  </div>
+                </div>
+                <button
+                  onClick={() => setIsModalOpen(false)}
+                  className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center text-gray-700 hover:bg-white/30 transition-all duration-200"
+                >
+                  <X size={24} />
+                </button>
+              </div>
+            </div>
+            
+            {/* Content */}
+            <div className="p-8 space-y-8">
+              {/* Full Description */}
+              <div>
+                <h3 className="text-2xl font-black text-gray-900 mb-4 flex items-center">
+                  <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl flex items-center justify-center ml-3">
+                    <span className="text-white font-bold text-sm">📝</span>
+                  </div>
+                  الوصف الشامل
+                </h3>
+                <p className="text-gray-700 text-lg leading-relaxed">{selectedService.fullDescription}</p>
+              </div>
+              
+              {/* Features */}
+              <div>
+                <h3 className="text-2xl font-black text-gray-900 mb-4 flex items-center">
+                  <div className="w-8 h-8 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-xl flex items-center justify-center ml-3">
+                    <span className="text-white font-bold text-sm">✨</span>
+                  </div>
+                  المميزات والخدمات
+                </h3>
+                <div className="grid md:grid-cols-2 gap-4">
+                  {selectedService.features.map((feature, index) => (
+                    <div key={index} className="flex items-start space-x-reverse space-x-3 p-4 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors duration-200">
+                      <div className={`w-3 h-3 bg-gradient-to-r ${selectedService.gradient} rounded-full mt-2 flex-shrink-0`}></div>
+                      <span className="text-gray-700">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              {/* Process */}
+              <div>
+                <h3 className="text-2xl font-black text-gray-900 mb-4 flex items-center">
+                  <div className="w-8 h-8 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-xl flex items-center justify-center ml-3">
+                    <span className="text-white font-bold text-sm">🔄</span>
+                  </div>
+                  خطوات العمل
+                </h3>
+                <div className="space-y-4">
+                  {selectedService.process.map((step, index) => (
+                    <div key={index} className="flex items-center space-x-reverse space-x-4 p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl border border-blue-100">
+                      <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold text-sm">
+                        {index + 1}
+                      </div>
+                      <span className="text-gray-700 font-medium">{step}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              {/* Examples */}
+              <div>
+                <h3 className="text-2xl font-black text-gray-900 mb-4 flex items-center">
+                  <div className="w-8 h-8 bg-gradient-to-r from-pink-500 to-rose-500 rounded-xl flex items-center justify-center ml-3">
+                    <span className="text-white font-bold text-sm">🎯</span>
+                  </div>
+                  أمثلة على المشاريع
+                </h3>
+                <div className="grid md:grid-cols-2 gap-4">
+                  {selectedService.examples.map((example, index) => (
+                    <div key={index} className="p-4 bg-gradient-to-r from-pink-50 to-rose-50 rounded-2xl border border-pink-100 hover:from-pink-100 hover:to-rose-100 transition-all duration-200">
+                      <span className="text-gray-700">{example}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              {/* CTA */}
+              <div className="text-center pt-8">
+                <button
+                  onClick={() => scrollToSection('contact')}
+                  className="px-10 py-5 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white font-bold text-lg rounded-2xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-reverse space-x-3 mx-auto"
+                >
+                  <Sparkles size={20} />
+                  <span>اطلب عرض أسعار</span>
+                  <ArrowRight size={20} />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Scroll to Top Button */}
       <div className="fixed bottom-8 right-8 z-50">
